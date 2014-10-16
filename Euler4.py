@@ -4,12 +4,15 @@ palList = []
 
 
 while len(str(n))==3:
-    ans = m * n
-    ansStr = str(ans)
-    ansRev = ansStr[::-1]
-    if ansStr == ansRev:
-        palList.append(ans)
+    while len(str(m))==3:
+        ans = m * n
+        ansStr = str(ans)
+        ansRev = ansStr[::-1]
+        if ansStr == ansRev:
+            palList.append(ans)
+        m = m + 1
     n = n + 1
+        
 
 print(palList)
     
