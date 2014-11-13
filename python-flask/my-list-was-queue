@@ -1,0 +1,34 @@
+# This script created a queue
+#
+# Author - Paul Doyle Aug 2013
+#
+#
+import boto.sqs
+import boto.sqs.queue
+from boto.sqs.message import Message
+from boto.sqs.connection import SQSConnection
+from boto.exception import SQSError
+
+conn = boto.sqs.connect_to_region("us-east-1", aws_access_key_id='AKIAJ2BJXBF74JPNZKCQ', aws_secret_access_key='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')
+
+"""rs = conn.get_all_queues()
+for q in rs:
+	print q"""
+my_queue = conn.get_queue = ("C12370211")
+
+from boto.sqs.Message import Message
+m = Message()
+m.set_body("Hello World")
+my_queue.write(m)
+
+rs = my_queue.get_messages()
+m = rs[0]
+mym = m.get_body()
+print mym
+
+for i in range(0,99):
+    m = Message()
+    m.set_body("Hello number%d " % i)
+    my_queue.write(m)
+    
+    
